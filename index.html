@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT102 | Final Project Instructions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: "#101c35",
+            accent: "#6366f1"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
+      <a href="#home" class="text-lg font-extrabold tracking-tight text-navy">
+        IT102 <span class="text-indigo-600">.</span>
+      </a>
+
+      <div class="hidden items-center gap-6 text-sm font-medium md:flex">
+        <a href="#overview" class="hover:text-indigo-600">Overview</a>
+        <a href="#features" class="hover:text-indigo-600">Requirements</a>
+        <a href="#submission" class="hover:text-indigo-600">Submission</a>
+        <a href="#integrity" class="hover:text-indigo-600">Reminders</a>
+      </div>
+
+      <a href="#submission"
+         class="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">
+        View Deliverables
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="home" class="relative overflow-hidden bg-navy text-white">
+    <div class="absolute -right-20 -top-20 h-80 w-80 rounded-full bg-indigo-500/20 blur-3xl"></div>
+    <div class="absolute -bottom-24 -left-20 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl"></div>
+
+    <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:py-28">
+      <div>
+        <span class="inline-flex items-center gap-2 rounded-full border border-indigo-300/30 bg-indigo-400/10 px-4 py-2 text-xs font-bold uppercase tracking-widest text-indigo-200">
+          Final Project · IT102
+        </span>
+
+        <h1 class="mt-7 text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+          C++ Menu-Driven
+          <span class="text-indigo-400">Calculator</span>
+        </h1>
+
+        <p class="mt-6 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
+          Build a functional console-based calculator using fundamental
+          C++ programming concepts. Apply your knowledge of variables,
+          conditional statements, loops, arrays, and input validation.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#overview"
+             class="rounded-xl bg-indigo-500 px-6 py-3 font-bold text-white transition hover:bg-indigo-400">
+            Explore Instructions
+          </a>
+          <a href="#features"
+             class="rounded-xl border border-white/20 px-6 py-3 font-bold text-white transition hover:bg-white/10">
+            Required Features
+          </a>
+        </div>
+      </div>
+
+      <!-- Project summary card -->
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-2xl backdrop-blur sm:p-7">
+        <div class="flex items-center gap-2 border-b border-white/10 pb-4">
+          <span class="h-3 w-3 rounded-full bg-red-400"></span>
+          <span class="h-3 w-3 rounded-full bg-yellow-400"></span>
+          <span class="h-3 w-3 rounded-full bg-green-400"></span>
+          <span class="ml-3 text-xs text-slate-400">calculator.cpp</span>
+        </div>
+
+        <div class="mt-6 font-mono text-sm leading-8">
+          <p class="text-slate-400">// Main Menu</p>
+          <p class="text-indigo-300">[1] Addition</p>
+          <p class="text-indigo-300">[2] Subtraction</p>
+          <p class="text-indigo-300">[3] Multiplication</p>
+          <p class="text-indigo-300">[4] Division</p>
+          <p class="text-indigo-300">[5] Modulus</p>
+          <p class="text-indigo-300">[6] View History</p>
+          <p class="text-indigo-300">[7] Exit</p>
+          <div class="mt-4 rounded-lg bg-black/30 p-3 text-green-300">
+            Enter your choice: <span class="animate-pulse">_</span>
+          </div>
+        </div>
+
+        <div class="mt-6 grid grid-cols-3 gap-3 border-t border-white/10 pt-5 text-center">
+          <div>
+            <p class="text-xl font-extrabold">5</p>
+            <p class="text-xs text-slate-400">Operations</p>
+          </div>
+          <div>
+            <p class="text-xl font-extrabold">7</p>
+            <p class="text-xs text-slate-400">Menu Options</p>
+          </div>
+          <div>
+            <p class="text-xl font-extrabold">C++</p>
+            <p class="text-xs text-slate-400">Language</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-7xl space-y-20 px-5 py-16">
+
+    <!-- Overview -->
+    <section id="overview" class="scroll-mt-24">
+      <div class="grid gap-10 md:grid-cols-2">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-widest text-indigo-600">
+            01 / Project Overview
+          </p>
+          <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-navy">
+            Project Description
+          </h2>
+          <p class="mt-5 leading-8 text-slate-600">
+            Students are required to develop a Menu-Driven Calculator System
+            using C++. The program must allow users to perform basic
+            mathematical operations through a menu-driven interface.
+          </p>
+          <p class="mt-4 leading-8 text-slate-600">
+            The project assesses your understanding of variables, data types,
+            input/output statements, conditional statements, switch statements,
+            looping structures, and arrays. Your output must be a functional
+            console-based application using concepts discussed during the semester.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
+          <h3 class="text-xl font-bold text-navy">Project Objectives</h3>
+          <p class="mt-2 text-sm text-slate-500">
+            At the end of this project, students should be able to:
+          </p>
+
+          <ul class="mt-6 space-y-4">
+            <li class="flex gap-3">
+              <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-sm font-bold text-indigo-700">1</span>
+              <span>Apply variables and appropriate data types in a C++ program.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-sm font-bold text-indigo-700">2</span>
+              <span>Use <code class="rounded bg-slate-100 px-1">cin</code> and <code class="rounded bg-slate-100 px-1">cout</code> to accept input and display output.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-sm font-bold text-indigo-700">3</span>
+              <span>Implement if-else and switch statements to control execution.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-sm font-bold text-indigo-700">4</span>
+              <span>Use loops to perform multiple calculations.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-sm font-bold text-indigo-700">5</span>
+              <span>Use arrays to store and display calculation history.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-sm font-bold text-indigo-700">6</span>
+              <span>Integrate the fundamental C++ concepts learned throughout the semester.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Required Features -->
+    <section id="features" class="scroll-mt-24">
+      <div class="max-w-3xl">
+        <p class="text-sm font-bold uppercase tracking-widest text-indigo-600">
+          02 / System Requirements
+        </p>
+        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-navy">
+          Required System Features
+        </h2>
+        <p class="mt-4 leading-7 text-slate-600">
+          Your calculator must implement all the following features.
+          Test each feature before submitting your project.
+        </p>
+      </div>
+
+      <div class="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+
+        <!-- Feature 1 -->
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-100 text-xl">⌘</div>
+          <h3 class="mt-5 text-lg font-bold text-navy">1. Menu-Driven Interface</h3>
+          <p class="mt-3 text-sm leading-7 text-slate-600">
+            Display a menu with seven options. Use a switch statement to
+            process the selected operation.
+          </p>
+          <div class="mt-5 rounded-xl bg-slate-950 p-4 font-mono text-xs leading-6 text-green-300">
+            [1] Addition<br>
+            [2] Subtraction<br>
+            [3] Multiplication<br>
+            [4] Division<br>
+            [5] Modulus<br>
+            [6] View History<br>
+            [7] Exit
+          </div>
+        </article>
+
+        <!-- Feature 2 -->
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-xl">±</div>
+          <h3 class="mt-5 text-lg font-bold text-navy">2. Arithmetic Operations</h3>
+          <p class="mt-3 text-sm leading-7 text-slate-600">
+            Accept the required numbers, perform the selected operation,
+            and display the correct result.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-600">
+            <li>• Addition (+)</li>
+            <li>• Subtraction (-)</li>
+            <li>• Multiplication (*)</li>
+            <li>• Division (/)</li>
+            <li>• Modulus (%) — integer remainder</li>
+          </ul>
+        </article>
+
+        <!-- Feature 3 -->
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100 text-xl">↻</div>
+          <h3 class="mt-5 text-lg font-bold text-navy">3. Looping Structure</h3>
+          <p class="mt-3 text-sm leading-7 text-slate-600">
+            Redisplay the main menu after every calculation until the user
+            chooses Exit. You may use a while loop or do-while loop.
+          </p>
+        </article>
+
+        <!-- Feature 4 -->
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-xl">✓</div>
+          <h3 class="mt-5 text-lg font-bold text-navy">4. Input Validation</h3>
+          <p class="mt-3 text-sm leading-7 text-slate-600">
+            Use if-else statements to check special conditions and invalid
+            selections.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-600">
+            <li>• Prevent division by zero.</li>
+            <li>• Validate menu choices.</li>
+            <li>• Display appropriate error messages.</li>
+          </ul>
+        </article>
+
+        <!-- Feature 5 -->
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-100 text-xl">▤</div>
+          <h3 class="mt-5 text-lg font-bold text-navy">5. Calculation History</h3>
+          <p class="mt-3 text-sm leading-7 text-slate-600">
+            Store previous calculations in arrays and allow users to view
+            their history. Separate arrays for operands, operators, and
+            results are acceptable.
+          </p>
+          <div class="mt-5 rounded-xl bg-slate-950 p-4 font-mono text-xs leading-6 text-green-300">
+            1. 10 + 5 = 15<br>
+            2. 20 - 8 = 12<br>
+            3. 6 * 4 = 24
+          </div>
+          <p class="mt-3 text-xs leading-5 text-slate-500">
+            Use a fixed-size array if desired, and handle maximum capacity.
+          </p>
+        </article>
+
+        <!-- Feature 6 -->
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-rose-100 text-xl">⏻</div>
+          <h3 class="mt-5 text-lg font-bold text-navy">6. Program Exit</h3>
+          <p class="mt-3 text-sm leading-7 text-slate-600">
+            When the user selects Exit, display a closing message and
+            terminate the program properly.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Concepts -->
+    <section>
+      <div class="rounded-3xl bg-navy p-7 text-white sm:p-10">
+        <p class="text-sm font-bold uppercase tracking-widest text-indigo-300">
+          03 / Programming Concepts
+        </p>
+        <h2 class="mt-3 text-2xl font-extrabold sm:text-3xl">
+          Required C++ Concepts
+        </h2>
+        <p class="mt-3 max-w-2xl leading-7 text-slate-300">
+          Your source code must demonstrate the following concepts discussed
+          during the semester.
+        </p>
+
+        <div class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+            <p class="font-bold">Variables & Data Types</p>
+            <p class="mt-1 text-sm text-slate-400">Store values and results.</p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+            <p class="font-bold">cin & cout</p>
+            <p class="mt-1 text-sm text-slate-400">Input and output.</p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+            <p class="font-bold">using namespace std;</p>
+            <p class="mt-1 text-sm text-slate-400">Standard C++ namespace.</p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+            <p class="font-bold">if-else Statements</p>
+            <p class="mt-1 text-sm text-slate-400">Conditions and validation.</p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+            <p class="font-bold">switch Statements</p>
+            <p class="mt-1 text-sm text-slate-400">Process menu options.</p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+            <p class="font-bold">Looping Structures</p>
+            <p class="mt-1 text-sm text-slate-400">Repeat menu operations.</p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+            <p class="font-bold">Arrays</p>
+            <p class="mt-1 text-sm text-slate-400">Store calculation history.</p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+            <p class="font-bold">Input Validation</p>
+            <p class="mt-1 text-sm text-slate-400">Handle invalid selections.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bonus -->
+    <section id="bonus" class="scroll-mt-24">
+      <div class="grid gap-8 md:grid-cols-5">
+        <div class="md:col-span-2">
+          <p class="text-sm font-bold uppercase tracking-widest text-indigo-600">
+            04 / Optional Enhancement
+          </p>
+          <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-navy">
+            Earn Additional Points
+          </h2>
+          <p class="mt-4 leading-7 text-slate-600">
+            Demonstrate a deeper understanding of conditional statements
+            by implementing nested if-else statements.
+          </p>
+          <span class="mt-5 inline-flex rounded-full bg-emerald-100 px-4 py-2 text-sm font-bold text-emerald-800">
+            Optional · Additional Points
+          </span>
+        </div>
+
+        <div class="space-y-4 md:col-span-3">
+          <div class="rounded-xl border border-slate-200 bg-white p-5">
+            <h3 class="font-bold text-navy">01. Result Analyzer</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">
+              After a calculation, determine whether the result is positive,
+              negative, or zero using nested if-else statements.
+            </p>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-white p-5">
+            <h3 class="font-bold text-navy">02. Advanced Division Validation</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">
+              Check whether division is selected and then verify that the
+              divisor is not zero before calculating.
+            </p>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-white p-5">
+            <h3 class="font-bold text-navy">03. Number Analyzer</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">
+              Determine whether a number is positive, negative, or zero,
+              and when applicable, check whether it is even or odd.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Submission -->
+    <section id="submission" class="scroll-mt-24">
+      <div class="max-w-3xl">
+        <p class="text-sm font-bold uppercase tracking-widest text-indigo-600">
+          05 / Final Deliverables
+        </p>
+        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-navy">
+          Submission Requirements
+        </h2>
+        <p class="mt-4 leading-7 text-slate-600">
+          Submit a printed project documentation containing all the following
+          requirements. Use the checklist to track your preparation.
+        </p>
+      </div>
+
+      <div class="mt-8 grid gap-8 lg:grid-cols-2">
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-bold text-navy">Documentation Checklist</h3>
+            <span id="progressText" class="text-sm font-semibold text-indigo-600">0 of 5</span>
+          </div>
+
+          <div class="mt-4 h-2 overflow-hidden rounded-full bg-slate-100">
+            <div id="progressBar" class="h-full w-0 rounded-full bg-indigo-600 transition-all duration-300"></div>
+          </div>
+
+          <div class="mt-6 space-y-5">
+            <label class="flex cursor-pointer gap-3">
+              <input type="checkbox" class="submission-check mt-1 h-5 w-5 accent-indigo-600">
+              <span>
+                <span class="font-semibold text-navy">1. Program Title and Description</span>
+                <span class="mt-1 block text-sm leading-6 text-slate-500">
+                  State the calculator's title, purpose, and functionality.
+                </span>
+              </span>
+            </label>
+
+            <label class="flex cursor-pointer gap-3">
+              <input type="checkbox" class="submission-check mt-1 h-5 w-5 accent-indigo-600">
+              <span>
+                <span class="font-semibold text-navy">2. Complete C++ Source Code</span>
+                <span class="mt-1 block text-sm leading-6 text-slate-500">
+                  Include the complete, readable, properly formatted source code.
+                </span>
+              </span>
+            </label>
+
+            <label class="flex cursor-pointer gap-3">
+              <input type="checkbox" class="submission-check mt-1 h-5 w-5 accent-indigo-600">
+              <span>
+                <span class="font-semibold text-navy">3. Program Output Screenshots</span>
+                <span class="mt-1 block text-sm leading-6 text-slate-500">
+                  Show the main menu, arithmetic operations, calculation history,
+                  and input validation.
+                </span>
+              </span>
+            </label>
+
+            <label class="flex cursor-pointer gap-3">
+              <input type="checkbox" class="submission-check mt-1 h-5 w-5 accent-indigo-600">
+              <span>
+                <span class="font-semibold text-navy">4. Code Explanation</span>
+                <span class="mt-1 block text-sm leading-6 text-slate-500">
+                  Explain variables, data types, cin, cout, if-else, switch,
+                  loops, and arrays.
+                </span>
+              </span>
+            </label>
+
+            <label class="flex cursor-pointer gap-3">
+              <input type="checkbox" class="submission-check mt-1 h-5 w-5 accent-indigo-600">
+              <span>
+                <span class="font-semibold text-navy">5. Program Explanation</span>
+                <span class="mt-1 block text-sm leading-6 text-slate-500">
+                  Explain the program flow, important code sections, and
+                  how the features work.
+                </span>
+              </span>
+            </label>
+          </div>
+
+          <p class="mt-6 rounded-xl bg-amber-50 p-4 text-sm leading-6 text-amber-900">
+            <strong>Important:</strong> The printed documentation must be
+            organized, complete, and properly formatted. You must be able
+            to explain your submitted source code.
+          </p>
+        </div>
+
+        <div class="space-y-5">
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 class="text-lg font-bold text-navy">Program Demonstration</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">
+              Demonstrate your working calculator. Be prepared to explain
+              how the program works and show the required features in action.
+            </p>
+            <ul class="mt-4 space-y-2 text-sm text-slate-600">
+              <li>✓ Perform the required calculations.</li>
+              <li>✓ Show calculation history.</li>
+              <li>✓ Demonstrate input validation.</li>
+              <li>✓ Explain the program's logic.</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl border border-indigo-100 bg-indigo-50 p-6">
+            <h3 class="text-lg font-bold text-indigo-950">Before You Submit</h3>
+            <ul class="mt-4 space-y-3 text-sm leading-6 text-indigo-900">
+              <li>• Compile and test your C++ program.</li>
+              <li>• Check all required menu options.</li>
+              <li>• Verify that screenshots match your actual output.</li>
+              <li>• Ensure the documentation and source code are consistent.</li>
+              <li>• Practice explaining your implementation.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Academic Integrity -->
+    <section id="integrity" class="scroll-mt-24">
+      <div class="overflow-hidden rounded-3xl border border-red-200 bg-white">
+        <div class="bg-red-50 p-7 sm:p-9">
+          <p class="text-sm font-bold uppercase tracking-widest text-red-700">
+            06 / Important Reminders
+          </p>
+          <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-red-950">
+            Academic Integrity & Originality
+          </h2>
+          <p class="mt-4 max-w-3xl leading-7 text-red-900">
+            Your submission must reflect your own work and your understanding
+            of the C++ concepts discussed during the semester.
+          </p>
+        </div>
+
+        <div class="space-y-5 p-7 sm:p-9">
+          <div class="flex gap-4">
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-red-100 font-bold text-red-700">1</span>
+            <div>
+              <h3 class="font-bold text-navy">Submit Your Own Work</h3>
+              <p class="mt-2 text-sm leading-7 text-slate-600">
+                The program must be your own work and demonstrate your
+                understanding of the concepts taught in class.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-red-100 font-bold text-red-700">2</span>
+            <div>
+              <h3 class="font-bold text-navy">Do Not Copy Other Students' Code</h3>
+              <p class="mt-2 text-sm leading-7 text-slate-600">
+                Copying source code from classmates, other students, or
+                online sources without proper acknowledgment is prohibited.
+                Substantially identical submissions may be checked and verified.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-red-100 font-bold text-red-700">3</span>
+            <div>
+              <h3 class="font-bold text-navy">Use AI Responsibly</h3>
+              <p class="mt-2 text-sm leading-7 text-slate-600">
+                Using AI-generated code without understanding, testing, or
+                being able to explain it is strongly discouraged. You must
+                understand and justify the programming concepts used in your code.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-red-100 font-bold text-red-700">4</span>
+            <div>
+              <h3 class="font-bold text-navy">Prepare for Code Verification</h3>
+              <p class="mt-2 text-sm leading-7 text-slate-600">
+                During your demonstration, the instructor may ask you to
+                explain specific code sections, trace program execution,
+                or make minor modifications to verify your understanding.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-red-100 font-bold text-red-700">5</span>
+            <div>
+              <h3 class="font-bold text-navy">Understand the Consequences</h3>
+              <p class="mt-2 text-sm leading-7 text-slate-600">
+                Programs that appear copied, generated entirely by AI without
+                sufficient understanding, or inconsistent with demonstrated
+                programming ability may undergo oral verification or code review.
+                Deductions or lower grades may apply when violations are
+                established, in accordance with the instructor's grading criteria
+                and applicable academic policies.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-red-100 font-bold text-red-700">6</span>
+            <div>
+              <h3 class="font-bold text-navy">Ensure Accuracy</h3>
+              <p class="mt-2 text-sm leading-7 text-slate-600">
+                Your printed documentation, source code, and actual program
+                output must be consistent and accurate.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-red-100 bg-red-50 p-7 text-center sm:p-9">
+          <p class="text-xl font-extrabold text-red-950">
+            The goal is not just to make the program work.
+          </p>
+          <p class="mt-2 leading-7 text-red-900">
+            The goal is to demonstrate your own understanding of the
+            C++ programming concepts learned throughout the semester.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final checklist -->
+    <section class="rounded-3xl border border-slate-200 bg-white p-7 text-center shadow-sm sm:p-10">
+      <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-100 text-2xl">
+        &lt;/&gt;
+      </div>
+      <h2 class="mt-5 text-2xl font-extrabold text-navy">
+        Ready to Build Your Calculator?
+      </h2>
+      <p class="mx-auto mt-3 max-w-2xl leading-7 text-slate-600">
+        Review every requirement, develop your program, test your output,
+        complete your printed documentation, and prepare for your demonstration.
+      </p>
+      <a href="#home"
+         class="mt-6 inline-flex rounded-xl bg-indigo-600 px-6 py-3 font-bold text-white transition hover:bg-indigo-700">
+        Back to Top ↑
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-8 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
+      <p class="font-bold text-navy">IT102 · Computer Programming</p>
+      <p class="text-sm text-slate-500">Final Project: C++ Menu-Driven Calculator</p>
+    </div>
+  </footer>
+
+  <!-- Interactive submission checklist -->
+  <script>
+    const checkboxes = document.querySelectorAll(".submission-check");
+    const progressText = document.getElementById("progressText");
+    const progressBar = document.getElementById("progressBar");
+
+    function updateProgress() {
+      const completed = [...checkboxes].filter(box => box.checked).length;
+      const total = checkboxes.length;
+      const percentage = (completed / total) * 100;
+
+      progressText.textContent = `${completed} of ${total}`;
+      progressBar.style.width = `${percentage}%`;
+    }
+
+    checkboxes.forEach(box => {
+      box.addEventListener("change", updateProgress);
+    });
+  </script>
+
+</body>
+</html>
